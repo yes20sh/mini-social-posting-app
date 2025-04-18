@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Post</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-zinc-800 to-zinc-900 text-white p-6">
+  <div class="max-w-3xl mx-auto">
+    <!-- Header Buttons -->
+    <div class="flex justify-between items-center mb-8">
+      <div class="flex gap-4">
+        <a href="/profile" class="text-sm px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-200">⬅ Back</a>
+        <a href="/logout" class="text-sm px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 transition duration-200">Logout</a>
+      </div>
+    </div>
+
+    <!-- Edit Post Section -->
+    <div class="bg-zinc-700 p-6 rounded-xl shadow-md">
+      <h3 class="text-2xl font-semibold mb-4">✏️ Edit Your Post</h3>
+      <form action="/update/<%= post._id %>" method="post" class="space-y-4">
+        <textarea name="content" class="w-full h-40 bg-zinc-800 p-4 rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Update your post..."><%= post.content %></textarea>
+        <input type="submit" value="Update Post" class="bg-yellow-600 hover:bg-yellow-700 px-5 py-2 rounded-lg text-sm font-medium cursor-pointer transition duration-200"/>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
